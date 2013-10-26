@@ -18,6 +18,7 @@ angular.module('shortlyApp', [])
     $http.get('/links')
     .success(function(data, status, headers, config){
       $scope.link = data;
+      $scope.predicate = "-visits";
     })
     .error(function(data, status){
 
@@ -25,7 +26,6 @@ angular.module('shortlyApp', [])
   })
 .controller('ShortenControl',
   function($scope, $http){
-    $scope.link = null;
     $scope.submit = function(){
       $http.post('/links', {url: $scope.link})
           .success(function(data, status, headers, config){

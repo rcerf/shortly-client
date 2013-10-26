@@ -79,6 +79,7 @@ get '/:url' do
     link = Link.find_by_code params[:url]
     raise Sinatra::NotFound if link.nil?
     link.clicks.create!
+    link.touch
     redirect link.url
 end
 ###########################################################

@@ -1,6 +1,16 @@
-<div ng-repeat="link in link">
+<ul id="nav">
+  <li><a ng-href="">Order By</a>
+    <ul>
+      <li><a ng-href="" ng-click="predicate='-updated_at'">Last Visited</a></li>
+      <li><a ng-href="" ng-click="predicate='-created_at'">Last Created</a></li>
+      <li><a ng-href="" ng-click="predicate='-visits'">Most Visited</a></li>
+    </ul>
+  </li>
+</ul>
+<input type="search" class="filter" ng-model="filter">
+<div ng-repeat="link in link | filter:filter | orderBy: predicate">
     <h2 class = "linkTitle" ng-href="">{{link.title}}</h2>
     <A ng-href="{{link.url}}">{{link.url}}</A>
-      <p class = "visits">{{link.visits}}</p>
+      <p class = "visits">{{link.visits}}{{predicate}}</p>
     <A ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</A>
 </div>

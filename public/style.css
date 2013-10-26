@@ -136,3 +136,30 @@ form input[type=text] {
   color: blue;
   text-decoration: underline;
 }
+
+#nav, #nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  float:right;
+}
+
+#nav a {
+  display: block;
+  width: 10em;
+}
+
+#nav li {
+  float: left;
+  width: 10em;
+}
+
+#nav li ul {
+  display: none;
+}
+
+#nav li:hover ul {
+  position: absolute;
+  display: block;
+  left: auto;
+}
