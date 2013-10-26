@@ -1,0 +1,6 @@
+<div ng-repeat="link in link">
+    <h2 class = "linkTitle" ng-href="">{{link.title}}</h2>
+    <A ng-href="{{link.url}}">{{link.url}}</A>
+      <p class = "visits">{{link.visits}}</p>
+    <A ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</A>
+</div>

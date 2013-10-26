@@ -1,0 +1,22 @@
+{
+  "name": "2013-09-shortly-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/adwitz/2013-09-shortly-client",
+  "authors": [
+    "Hack Reactor Students <github@hackreactor.com>"
+  ],
+  "description": "shortly",
+  "main": "index.erb",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.0.8"
+  }
+}
