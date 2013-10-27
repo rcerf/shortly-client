@@ -45,6 +45,7 @@ class Link < ActiveRecord::Base
     before_save do |record|
         record.code = Digest::SHA1.hexdigest(url)[0,5]
     end
+
 end
 
 class Click < ActiveRecord::Base
@@ -81,6 +82,14 @@ get '/:url' do
     link.clicks.create!
     link.touch
     redirect link.url
+end
+
+get '/stats/:code' do
+    link_id = Link.find_by_id params[:code]
+    clicks = Click.where(link_id: link_id)
+    clicks.map { |click|
+        link.as_json.merge(base_url: request.base_url)
+    }.to_json
 end
 ###########################################################
 # Utility
